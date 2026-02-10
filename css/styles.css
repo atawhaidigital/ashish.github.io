@@ -387,7 +387,7 @@ body {
         font-size: 1rem;
     }
 }
-
+/* --- Map --- */
 #map {
     height: 600px;
     width: 100%;
@@ -395,6 +395,15 @@ body {
     border: 10px double #3d2b1f;
     background-color: #d9c8a9;
     margin-top: 20px;
+}
+
+.rdr-marker {
+    background-color: #8B0000; /* RDR Red */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #2e1a05; /* Dark ink border */
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 /* --- Footer --- */
