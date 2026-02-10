@@ -406,6 +406,16 @@ body {
     box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
+.rdr-pin-svg {
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+}
+
+.rdr-pin-path {
+    fill: #8B0000; /* Deep RDR Red */
+    stroke: #2e1a05; /* Dark ink border */
+    stroke-width: 1.5;
+}
+
 /* --- Footer --- */
 .bb-footer {
     background-color: #00332a;
