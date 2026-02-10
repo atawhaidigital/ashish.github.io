@@ -140,20 +140,26 @@
         });
 
 
-        // Initialize the map
-        var map = L.map('map').setView([-36.8485, 174.7633], 10);
+// Define the custom RDR red icon
+var rdrIcon = L.divIcon({
+    className: 'rdr-marker',
+    iconSize: [12, 12],
+    iconAnchor: [6, 6]
+});
 
-        // Add the base map tiles
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data &copy; OpenStreetMap'
-        }).addTo(map);
-
-        // LOAD YOUR KML FILE HERE
-        var runLayer = omnivore.kml('rdr2map.kml')
-            .on('ready', function () {
-                map.fitBounds(runLayer.getBounds());
-            })
-            .addTo(map);
+// Load the KML and apply the icon to every point found
+var runLayer = omnivore.kml('rdr2map.kml')
+    .on('ready', function () {
+        map.fitBounds(runLayer.getBounds());
+        
+        // Loop through each layer created from the KML
+        runLayer.eachLayer(function(layer) {
+            if (layer instanceof L.Marker) {
+                layer.setIcon(rdrIcon);
+            }
+        });
+    })
+    .addTo(map);
     </script>
 
 </body>
