@@ -120,34 +120,27 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.getElementById('mobile-menu');
-            const navList = document.getElementById('nav-list');
-
-            if (menuToggle && navList) {
-                menuToggle.addEventListener('click', () => {
-                    navList.classList.toggle('is-active');
-                });
-
-                const navLinks = navList.querySelectorAll('a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        navList.classList.remove('is-active');
-                    });
-                });
-            }
-        });
-
+   <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Mobile Menu
+        // --- Mobile Menu Logic ---
         const menuToggle = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
+
         if (menuToggle && navList) {
-            menuToggle.addEventListener('click', () => navList.classList.toggle('is-active'));
+            menuToggle.addEventListener('click', () => {
+                navList.classList.toggle('is-active');
+            });
+
+            const navLinks = navList.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('is-active');
+                });
+            });
         }
 
-             // Initialize the map
+        // --- Map Logic ---
+        // Initialize the map
         var map = L.map('map').setView([-36.8485, 174.7633], 10);
 
         // Add the base map tiles
@@ -155,12 +148,30 @@
             attribution: 'Map data &copy; OpenStreetMap'
         }).addTo(map);
 
-        // LOAD YOUR KML FILE HERE
+        // Define the RDR red icon
+        var rdrIcon = L.divIcon({
+            className: 'rdr-marker',
+            iconSize: [12, 12],
+            iconAnchor: [6, 6]
+        });
+
+        // Load the KML and apply the red icon
         var runLayer = omnivore.kml('rdr2map.kml')
             .on('ready', function () {
                 map.fitBounds(runLayer.getBounds());
+                
+                // Swap blue pins for red dots
+                runLayer.eachLayer(function(layer) {
+                    if (layer instanceof L.Marker) {
+                        layer.setIcon(rdrIcon);
+                    }
+                });
+            })
+            .on('error', function(e) {
+                console.error('KML failed to load:', e);
             })
             .addTo(map);
+    });
 </script>
 
 </body>
