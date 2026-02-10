@@ -388,6 +388,15 @@ body {
     }
 }
 
+#map {
+    height: 600px;
+    width: 100%;
+    filter: sepia(1) contrast(0.9) brightness(0.8) hue-rotate(-15deg);
+    border: 10px double #3d2b1f;
+    background-color: #d9c8a9;
+    margin-top: 20px;
+}
+
 /* --- Footer --- */
 .bb-footer {
     background-color: #00332a;
