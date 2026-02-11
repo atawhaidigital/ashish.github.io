@@ -179,6 +179,33 @@ body {
     text-transform: uppercase;
 }
 
+.bb-cta-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.bb-btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #e8d353;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.bb-btn-primary:hover {
+    background-color: transparent;
+    color: #e8d353;
+    border-color: #e8d353;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
 /* --- Main Content Area --- */
 .bb-main {
     display: flex;
