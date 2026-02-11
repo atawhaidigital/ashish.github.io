@@ -187,7 +187,7 @@ body {
 .bb-btn-primary {
     display: inline-block;
     padding: 12px 30px;
-    background-color: #eeb21e;
+    background-color: #fdd31c;
     color:#000000;
     text-decoration: none;
     font-weight: bold;
@@ -200,8 +200,8 @@ body {
 
 .bb-btn-primary:hover {
     background-color: transparent;
-    color: #eeb21e;
-    border-color: #eeb21e;
+    color: #fdd31c;
+    border-color: #fdd31c;
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
