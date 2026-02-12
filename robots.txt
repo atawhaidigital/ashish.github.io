@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atawhaidigital.github.io/sitemap.xml
